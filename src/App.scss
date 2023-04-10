@@ -1,0 +1,114 @@
+$color-primary: rgb(251, 146, 60);
+
+body {
+  background-image: url("/img/bg-pizza.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  padding-top: 100px;
+}
+
+h3 {
+  font-size: 1.6rem;
+  line-height: 2.25rem;
+  font-weight: bold;
+}
+
+span {
+  color: rgb(249 115 22);
+}
+
+.attention {
+  font-size: 5rem;
+}
+
+.order-btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-primary;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($color-primary, 15%);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #000;
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled {
+  background-color: #cbbcb1;
+}
+
+.mask-custom {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+}
+
+.nav-link {
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  transform: scale(1.03);
+  text-decoration: underline 2px rgb(249 115 22);
+}
